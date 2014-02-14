@@ -32,11 +32,13 @@ implements npm.Package.Require<"net","*">
   static function createServer(?options:{allowHalfOpen:Bool},fn:js.node.net.Socket->Void):js.node.net.Server;
 
   @:overload(function(path: String, ?connectListener: Void->Void): js.node.net.Socket {}) // Unix socket
-  @:overload(function(options: Dynamic, ?connectListener: Void->Void): js.node.net.Socket {}) // options is TPCSocket or UNIXSocket
+  @:overload(function(options: TCPSocketOptions, ?connectListener: Void->Void): js.node.net.Socket {})
+  @:overload(function(options: UNIXSocketOptions, ?connectListener: Void->Void): js.node.net.Socket {})
   static function createConnection(port:Int, ?host:String, ?connectListener: Void->Void):js.node.net.Socket; // TCP Socket
 
   @:overload(function(path: String, ?connectListener: Void->Void): js.node.net.Socket {}) // Unix socket
-  @:overload(function(options: Dynamic, ?connectListener: Void->Void): js.node.net.Socket {}) // options is TPCSocket or UNIXSocket
+  @:overload(function(options: TCPSocketOptions, ?connectListener: Void->Void): js.node.net.Socket {})
+  @:overload(function(options: UNIXSocketOptions, ?connectListener: Void->Void): js.node.net.Socket {})
   static function connect(port:Int, ?host:String, ?connectListener: Void->Void):js.node.net.Socket;
 
   static function isIP(input:String):Int; // 4 or 6
