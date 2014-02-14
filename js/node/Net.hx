@@ -8,7 +8,7 @@ typedef TCPSocketOptions = {
   @:optional var allowHalfOpen: Bool;
 }
 
-typedef UNIXsocketOptions = {
+typedef UNIXSocketOptions = {
   var path: String;
   @:optional var allowHalfOpen: Bool;
 }
