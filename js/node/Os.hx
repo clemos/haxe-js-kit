@@ -37,5 +37,5 @@ implements npm.Package.Require<"os","*">
   static function cpus(): CPUInformations;
   static function platform():String;
   static function arch():String;
-  static function networkInterfaces(): haxe.ds.StringMap<NetworkInterface>;
+  static function networkInterfaces(): Dynamic<NetworkInterface>;
 }
