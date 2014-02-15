@@ -13,13 +13,12 @@ implements npm.Package.Require<"path","*">
     static function normalize(p:String):String;
 
     static inline function resolve(?from:Array<String>, to: String):String {
-        if (null == from) {
-            from = new Array<String>();
+        var args = new Array<String>();
+        if (null != from) {
+		    args = from.slice(0);
         }
 
-        var args = from;
-        args.push(to);
-
+  		args.push(to);
         return untyped Path['resolve'].apply(Path, args);
     }
 
