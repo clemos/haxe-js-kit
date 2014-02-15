@@ -17,7 +17,7 @@ typedef UrlObj = {
 extern class Url 
 implements npm.Package.Require<"url","*"> 
 {
-  static function parse(p:String,?andQueryString:Bool):UrlObj;
+  static function parse(urlStr:String,?parseQueryString:Bool, slashesDenoteHost: Bool):UrlObj;
   static function format(o:UrlObj):String;
-  static function resolve(from:Array<String>,to:String):String;
+  static function resolve(from:String,to:String):String;
 }
