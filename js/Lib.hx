@@ -42,7 +42,7 @@ class Lib {
 	}
 
 	static inline function get_self(){
-		return untyped __js__("this");
+		return untyped $(__js__("this"));
 	}
 
 }
