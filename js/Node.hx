@@ -23,6 +23,8 @@ class Node {
   public static var setInterval(default,null): (Void->Void)->Int->?Array<String>->Int = untyped __js__("setInterval");
   public static var clearTimeout(default,null): Int->Void = untyped __js__("clearTimeout");
   public static var clearInterval(default,null): Int->Void = untyped __js__("clearInterval");
+  public static var setImmediate(default,null): (Void->Void)->?Array<String>->Int = untyped __js__("setImmediate");
+  public static var clearImmediate(default,null): Int->Void = untyped __js__("clearImmediate");
 
 }
 
