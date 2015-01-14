@@ -46,15 +46,15 @@ extern class TModels<T,M:TModel<T>> {
 	@:overload( function ( conditions : {} , fields : Null<{}> , options : {} , ?callback : Callback<Array<M>> ): Query<Array<M>> {} )
 	public function find( ?conditions : {} , ?callback : Callback<Array<M>> ): Query<Array<M>>; // Query<Model<T>>
 
-	@:overload( function( id : Dynamic , callback : Callback<Null<M>> ) : Void {} )
+	@:overload( function( id : Dynamic , callback : Callback<Null<Model<T>>> ) : Query<Model<T>> {} )
 	@:overload( function ( id : Dynamic , fields : String , options : {} , ?callback : Callback<Null<Model<T>>> ): Query<Model<T>> {} )
 	@:overload( function ( id : Dynamic , fields : Null<{}> , options : {} , ?callback : Callback<Null<Model<T>>> ): Query<Model<T>> {} )
 	public function findById( id : Dynamic , ?callback : Callback<Null<Model<T>>> ): Query<Model<T>>; // Query<Model<T>>
 
-	@:overload( function( conditions : {} , callback : Callback<Null<M>> ) : Void {} )
-	@:overload( function ( conditions : {}  , fields : String , options : {} , ?callback : Callback<Null<M>> ): Query<M> {} )
-	@:overload( function ( conditions : {} , fields : Null<{}> , options : {} , ?callback : Callback<Null<M>> ): Query<M> {} )
-	public function findOne( ?conditions : {} ): Query<M>; // Query<M>
+	@:overload( function( conditions : {} , callback : Callback<Null<Model<T>>> ) : Query<Model<T>> {} )
+	@:overload( function ( conditions : {}  , fields : String , options : {} , ?callback : Callback<Null<Model<T>>> ): Query<Model<T>> {} )
+	@:overload( function ( conditions : {} , fields : Null<{}> , options : {} , ?callback : Callback<Null<Model<T>>> ): Query<Model<T>> {} )
+	public function findOne( ?conditions : {} ): Query<Model<T>>; // Query<M>
 
 	@:overload( function ( conditions : {} , ?callback : Callback<Int> ): Query<M> {} )// Query<M>
 	public function count( callback : Callback<Int> ): Query<M>; // Query<M>
