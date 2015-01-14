@@ -24,17 +24,23 @@ implements Dynamic<String->TMiddleware<Request,Response>->Void>
 
 	public static function createServer (a1 :Dynamic, ?a2 :Dynamic, ?a3 :Dynamic, ?a4 :Dynamic, ?a5 :Dynamic, ?a6 :Dynamic, ?a7 :Dynamic, ?a8 :Dynamic, ?a9 :Dynamic) : Application;
 
+	@:overload(function(path : RegExp , m : TMiddleware<Request,Response> , f : TMiddleware<Request,Response> ) : Void {} )
+	@:overload(function(path : String , m : TMiddleware<Request,Response> , f : TMiddleware<Request,Response> ) : Void {} )
 	@:overload(function(path : RegExp , f : Array<TMiddleware<Request,Response>> ) : Void {} )
 	@:overload(function(path : RegExp , f : TMiddleware<Request,Response> ) : Void {} )
 	@:overload(function(path : String , f : Array<TMiddleware<Request,Response>> ) : Void {} )
 	@:overload(function(name:String) : Dynamic {} )
 	function get(path : String, f : TMiddleware<Request,Response> ) : Void;
 	
+	@:overload(function(path : RegExp , m : TMiddleware<Request,Response> , f : TMiddleware<Request,Response> ) : Void {} )
+	@:overload(function(path : String , m : TMiddleware<Request,Response> , f : TMiddleware<Request,Response> ) : Void {} )
 	@:overload(function(path : RegExp , f : Array<TMiddleware<Request,Response>> ) : Void {} )
 	@:overload(function(path : RegExp , f : TMiddleware<Request,Response> ) : Void {} )
 	@:overload(function(path : String , f : Array<TMiddleware<Request,Response>> ) : Void {} )
 	function post(path : String, f : TMiddleware<Request,Response> ) : Void;
 
+	@:overload(function(path : RegExp , m : TMiddleware<Request,Response> , f : TMiddleware<Request,Response> ) : Void {} )
+	@:overload(function(path : String , m : TMiddleware<Request,Response> , f : TMiddleware<Request,Response> ) : Void {} )
 	@:overload(function(path : RegExp , f : Array<TMiddleware<Request,Response>> ) : Void {} )
 	@:overload(function(path : RegExp , f : TMiddleware<Request,Response> ) : Void {} )
 	@:overload(function(path : String , f : Array<TMiddleware<Request,Response>> ) : Void {} )
