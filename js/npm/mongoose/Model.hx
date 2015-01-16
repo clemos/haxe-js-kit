@@ -69,8 +69,8 @@ extern class TModels<T,M:TModel<T>> {
 	@:overload( function( conditions : {} , update : {} , ?options : {},  ?callback : Callback<Int> ) : Query<Array<M>> {} )
 	public function update( conditions : {} , update : {} , ?options : {},  ?callback : Callback2<Int, Dynamic> ) : Query<Array<M>>;
 
-	@:overload( function( o : ModelMapReduce , ?callback : Callback<Array<M>> ) : Void {} )
-	public function mapReduce( o : ModelMapReduce , ?callback : Callback2<Array<M>,{}> ) : Void;
+	@:overload( function( o : ModelMapReduce , ?callback : Callback<Array<M>> ) : Promise {} )
+	public function mapReduce( o : ModelMapReduce , ?callback : Callback2<Array<M>,{}> ) : Promise;
 
 	@:overload( function( c1 : {} , c2 : {} , c3 : {} , c4 : {} , c5 : {} , options : {} , ?callback : Callback<{}> ) : Dynamic {} )
 	@:overload( function( c1 : {} , c2 : {} , c3 : {} , c4 : {} , options : {} , ?callback : Callback<{}> ) : Dynamic {} )
