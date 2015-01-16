@@ -52,7 +52,7 @@ extern class TModels<T,M:TModel<T>> {
 	public function findOneAndRemove( ?conditions : {} , ?options : {} , ?callback : Callback<Null<M>> ) : Query<M>;
 
 	public function findByIdAndUpdate( ?id : Dynamic , ?update : {} , ?options : {} , ?callback : Callback<Null<M>> ) : Query<M>;
-	public function findByIdAndRemove( id : Dynamic , ?options : {}, ?callback : Callback<Null<M>> ) : Query<M>;
+	public function findByIdAndRemove( ?id : Dynamic , ?options : {}, ?callback : Callback<Null<M>> ) : Query<M>;
 
 	public function count( ?conditions : {}, ?callback : Callback<Int> ): Query<M>;
 
