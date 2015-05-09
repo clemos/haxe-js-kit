@@ -1,3 +1,3 @@
 package js.support;
 
-typedef Error = Null<String>;
+typedef Error = js.Error;
