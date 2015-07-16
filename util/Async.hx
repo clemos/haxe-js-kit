@@ -18,6 +18,7 @@ class AsyncBuilder {
 	#if macro
 
 		public static inline var asyncMeta = "async";
+		public static inline var cbMeta = "cb";
 
 		static function build(){
 			var fields : Array<Field> = haxe.macro.Context.getBuildFields();
@@ -50,6 +51,16 @@ class AsyncBuilder {
 						
 					}
 					e.expr = EBlock( currentBlock );
+
+				case EMeta(s, em) if (s.name == cbMeta):
+					if (s.params.length == 0) s.params.push(macro cb);
+					switch(em.expr) {
+						case ECall(e1, params):
+							for(i in 0...s.params.length)
+								params.push(s.params[i]);
+						case _:
+					}
+					e.iter(transform.bind(_, block));
 
 				case EVars( vars ) :
 					//var newVars = [];
