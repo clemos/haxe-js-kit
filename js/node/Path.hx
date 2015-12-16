@@ -5,7 +5,7 @@ implements npm.Package.Require<"path","*">
 {
   static var sep:String;
 	
-  static function join(?p1:String,?p2:String,?p3:String):String;
+  static function join(?p1:String,?p2:String,?p3:String,?p4:String,?p5:String,?p6:String,?p7:String):String;
   static function normalize(p:String):String;
   static function relative(?p1:String,?p2:String,?p3:String):String;
   @:overload(function(?p1:String,?p2:String,?p3:String):String {})
