@@ -108,7 +108,7 @@ extern class TModels<T,M:TModel<T>> {
 	@:overload( function( ?id : Dynamic ) : Query<M> {} )
 	public function findByIdAndRemove( id : Dynamic , callback : Callback<Null<M>> ) : Query<M>;
 
-	//@:overload( function( doc : Array<T> , fn : Callback<Array<M>> ) : Void {} )
+	@:overload( function( doc : Array<T> , fn : Callback<Array<M>> ) : Void {} )
 	public function create( doc:T , fn : Callback<M> /* TODO : maybe there's a solution for multiple arguments... */  ) : Void;
 	
 	@:overload( function( conditions : {} , update : {} , callback : ModelUpdateCallback ) : Query<Array<M>> {} )
