@@ -29,5 +29,6 @@ extern class Nodemailer
 implements npm.Package.Require<"nodemailer", "^1.3.4">
 {
 	//@:overload(function(transport : Transport) : Transporter {})
+	@:overload(function(connectionUrl : String) : Transporter {})
 	public static function createTransport(?options : NodemailerOptions) : Transporter;
 }
