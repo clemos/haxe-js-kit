@@ -46,11 +46,43 @@ extern interface Middleware {}
 	'connect',
 	'all'
 ], 
-function(path : Route , f : haxe.extern.Rest<AbstractMiddleware> ) : Application {} , [] ) )
+function(path : Route , f : haxe.extern.Rest<AbstractMiddleware>) : MiddlewareHttp {} , [] ) )
 extern class MiddlewareHttp 
 {
-	@:overload( function ( path : Route , middleware : Rest<AbstractMiddleware> ) : Application {} )
-	public function use ( middleware : Rest<AbstractMiddleware> ) : Application ;
+	@:overload( function ( path : Route , middleware : Rest<AbstractMiddleware> ) : MiddlewareHttp {} )
+	public function use ( middleware : Rest<AbstractMiddleware> ) : MiddlewareHttp ;
 
-	function param<P>( name : String , callback : MiddlewareParam<P> ) : Application;
+	function param<P>( name : String , callback : MiddlewareParam<P> ) : MiddlewareHttp;
 }
+
+@:build( util.CopyMethods.build([
+	'get', 
+	'post', 
+	'put', 
+	'head', 
+	'delete', 
+	'options', 
+	'trace', 
+	'copy', 
+	'lock', 
+	'mkcol', 
+	'move', 
+	'purge', 
+	'propfind', 
+	'proppatch', 
+	'unlock', 
+	'report', 
+	'mkactivity', 
+	'checkout', 
+	'merge', 
+	'm-search',
+	'notify', 
+	'subscribe', 
+	'unsubscribe', 
+	'patch', 
+	'search', 
+	'connect',
+	'all'
+], 
+function(f : haxe.extern.Rest<AbstractMiddleware>) : MiddlewareRoute {} , [] ) )
+extern class MiddlewareRoute { }
