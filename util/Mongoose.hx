@@ -75,7 +75,7 @@ class Mongoose {
 						params : [],
 						expr : macro {
 
-							var m = untyped mongoose.model( name , $modExpr.get_Schema() , collectionName , skipInit );
+							var m = untyped js.npm.Mongoose.mongoose.model( name , $modExpr.get_Schema() , collectionName , skipInit );
 							var proto = untyped $modelExpr.prototype;
 							for( f in Reflect.fields(proto) ){
 								untyped m[f] = proto[f];
