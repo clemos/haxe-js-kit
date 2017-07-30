@@ -12,6 +12,7 @@ extern class TRequest<P>
 extends ClientRequest {
 
 	public var params : P;
+	public var body : P;
 	public var query : Dynamic;
 	public var route : RequestRoute;
 	public var accepted : Array<RequestAccepted>;
